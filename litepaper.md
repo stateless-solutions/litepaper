@@ -195,5 +195,5 @@ By leveraging our trustworthy permissioned and federated node network, Stateless
 
 Stateless is committed to providing a robust middleware solution to enhance
 security in blockchain networks, addressing the risks associated with
-compromised operational trust. With a committed approach to safety and innovation, Stateless is prepared to foster a future of enhanced security and efficiency in the blockchain ecosystem.
+compromised operational trust. 
 
