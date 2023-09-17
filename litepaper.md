@@ -55,10 +55,10 @@ security, fault tolerance, and decentralization concerns. Centralized
 infrastructure providers such as Infura and Alchemy have a single point of
 failure, potentially compromising the security and reliability of applications.
 
-Decentralized providers such as Pocket and Lava have even lower barriers to
+Decentralized providers such as Pocket Network and Lava have even lower barriers to
 entry, requiring a nominal financial investment to begin serving data to
 production applications. These network protocols lack any direct protection for
-application developers, and will even inadvertently reward bad actors who serve
+application developers, and can inadvertently reward bad actors who serve
 fraudulent and malicious data.
 
 # Stateless Middleware: A Solution
