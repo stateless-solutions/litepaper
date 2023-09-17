@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'litepaper/litepaper.md'
+  workflow_dispatch:
 
 jobs:
   build:
