@@ -125,7 +125,7 @@ codebase to as little as possible.
 
 Stateless has a clear roadmap for its development, focusing on both short-term
 and long-term goals that aim to revolutionize the blockchain infrastructure
-space, while remaining in lock step with the evolutions current and future
+space, while remaining in step with the evolutions of current and upcoming
 blockchain networks.
 
 Stateless aims to redefine the middleware landscape space by offering a secure and auditable API middleware solution that mitigates vulnerabilities between consumer requests and data node responses. The goal is to protect decentralized applications from data integrity failures and financial exploitation, ensuring a secure and efficient interface for both applications and providers. 
