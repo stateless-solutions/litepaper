@@ -16,4 +16,4 @@ jobs:
       run: sudo apt-get install -y pandoc
 
     - name: Convert Markdown to PDF
-      run: pandoc path/to/your/litepaper.md -o path/to/your/litepaper.pdf
+      run: pandoc litepaper/litepaper.md -o litepaper/litepaper.pdf
