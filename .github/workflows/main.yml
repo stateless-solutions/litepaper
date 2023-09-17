@@ -1,0 +1,19 @@
+name: Generate PDF
+
+on: 
+  push:
+    paths:
+      - 'litepaper/litepaper.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Pandoc
+      run: sudo apt-get install -y pandoc
+
+    - name: Convert Markdown to PDF
+      run: pandoc path/to/your/litepaper.md -o path/to/your/litepaper.pdf
