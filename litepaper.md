@@ -189,11 +189,15 @@ Stateless ZK initiatives aim to solidify the infrastructure that underpins Layer
 
 By leveraging our trustworthy permissioned and federated node network, Stateless encourages nodes to continually refine and enhance their provers, fostering a competitive environment with a diverse range of offerings. This strategic development positions Stateless as a comprehensive "one-stop" infrastructure solution where applications can not only access verifiable RPC but also choose from a variety of proof-based services tailored to their specific use cases
 
-**2027-2030**: Establish a trustless and decentralized prover market that catalyzes a direct connection between applications and nodes, enhancing the overall integrity and efficiency of blockchain infrastructures. This market, grounded in a zk-L1 infrastructure, is designed to serve blockchains not utilizing zero-knowledge (ZK) technology, thereby extending the benefits of proof technology to a wider spectrum of blockchain networks. By spearheading this initiative, Stateless aspires to redefine the application infrastructure access, fostering secure, direct, and cost-effective transactions through its revolutionary API middleware solutions that are inclusive of all blockchain preferences held by applications.
+**2027-2030**: Establish a decentralized prover market that catalyzes direct peer-to-peer connections between applications and nodes, significantly enhancing the integrity and efficiency of blockchain infrastructures. This initiative, grounded in a blockchain-agnostic ZK infrastructure, enables Stateless to substantiate any transaction on any blockchain supported by the protocol, expanding proof services beyond L2 blockchains using existing proof mechanisms such as SNARK or STARK.
+
+Stateless aims to redefine the paradigm of application infrastructure access, fostering secure, direct, and cost-effective transactions through middleware solutions that cater to the diverse blockchain preferences of applications. This model not only increases security by eradicating vulnerabilities associated with intermediary gateway clients but also encourages efficiency in the marketplace, paving the way for reliable and robust security solutions.
 
 # Conclusion
 
-Stateless is committed to providing a robust middleware solution to enhance
-security in blockchain networks, addressing the risks associated with
-compromised operational trust. 
+As the blockchain ecosystem continues to evolve, the necessity for secure, reliable, and efficient middleware solutions has become more apparent than ever. Stateless emerged from a crucial need to address significant vulnerabilities in the existing blockchain application infrastructure, particularly within the Ethereum ecosystem. Our robust middleware solution represents a beacon of security and trust in an environment fraught with potential attack vectors and compromised operational trust.
+
+From the onset, Stateless has committed to shielding applications and their users from risks such as indirect and direct theft of funds, and exposure to malware distribution, prevalent in the current infrastructure. Our initiative, grounded in innovation and foresight, propels the blockchain application development landscape forward, minimizing vulnerabilities and fostering a safer, more reliable space for both developers and users.
+
+Stateless envisions a resilient future for blockchain applications, free from the existing vulnerabilities and gateway dependencies. As we move forward, Stateless maintains its dedication to being a reliable Web3 service, developing solutions that actively support the continual growth and evolution of blockchain technology. Together, we are constructing a framework where security aligns with innovation, ensuring a safer and more efficient ecosystem.
 
