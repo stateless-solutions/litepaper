@@ -17,4 +17,4 @@ jobs:
       run: sudo apt-get install -y pandoc
 
     - name: Convert Markdown to PDF
-      run: pandoc litepaper/latex-includes.yaml litepaper/litepaper.md -F mermaid-filter urlcolor=cyan -o litepaper/litepaper.pdf
+      run: pandoc latex-includes.yaml litepaper.md -F mermaid-filter urlcolor=cyan -o litepaper.pdf
