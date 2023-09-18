@@ -1,0 +1,7 @@
+---
+numbersections: true
+header-includes:
+  - \usepackage{fullpage}
+  - \usepackage{tikz}
+  - \usetikzlibrary{shapes,arrows,positioning}
+---

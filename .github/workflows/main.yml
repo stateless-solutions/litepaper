@@ -1,6 +1,6 @@
 name: Generate PDF
 
-on: 
+on:
   push:
     paths:
       - 'litepaper/litepaper.md'
@@ -17,4 +17,4 @@ jobs:
       run: sudo apt-get install -y pandoc
 
     - name: Convert Markdown to PDF
-      run: pandoc litepaper/litepaper.md -o litepaper/litepaper.pdf
+      run: pandoc litepaper/latex-includes.yaml litepaper/litepaper.md -F mermaid-filter urlcolor=cyan -o litepaper/litepaper.pdf
