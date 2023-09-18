@@ -22,7 +22,7 @@ jobs:
     - name: Convert Markdown to PDF
       run: pandoc latex-includes.yaml litepaper.md -F mermaid-filter --variable urlcolor=cyan -o litepaper.pdf
 
-    - uses: stefanweifel/git-auto-commit-action@v4
+    - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Render PDF
 
