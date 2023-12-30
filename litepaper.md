@@ -84,7 +84,7 @@ of the existing attack vectors.
 While the issues identified have the most pronounced impact in the Ethereum
 ecosystem, Stateless middleware is designed to be adaptable to various
 blockchain and decentralized networks, ensuring that the provided security enhancements can be
-applied to a wider range of decentralized application development.
+applied to a wider range of decentralized development.
 
 ## Stateless From the Perspective of an Application Developer
 
@@ -190,30 +190,27 @@ Through a federated but hetereogenerous node network, Stateless encourages data 
 
 **2026**: Establish a decentralized prover market that catalyzes direct peer-to-peer connections between consumers and nodes, significantly enhancing the integrity and efficiency across decentralized ecosystems. This market will facilitate direct peer-to-peer connections, fostering a permissionless ecosystem for data consumers. The key to this ecosystem is the verifiable compute that underlies every service, ensuring that each transaction and interaction within the Stateless infrastructure is trustworthy and transparent. This initiative, grounded in a blockchain-agnostic ZK infrastructure, enables Stateless to substantiate any transaction on any network supported by the protocol.
 
+```mermaid
 graph LR
-
 User(User) <-.-> A
-
   subgraph AppOwned
     A[App Interface] <--> C[Light Client]
   end
-
   subgraph Stateless
     subgraph Providers
       D[Provider 1]
       E[Provider 2]
       F[Provider 3]
     end
-
     subgraph Provers
       G[Prover 1]
       H[Prover 2]
       I[Prover 3]
     end
   end
-
   C <-.->|Verified State| Providers
   C <-.->|Proof| Provers
+```
 
 This evolution is redfines how decentralized infrastructure is accessed, offering secure, direct, and cost-effective transactions that align with the varied demands of various communities, seeking to eliminate the vulnerabilities associated with intermediary gateways, thus significantly bolstering market efficiency, security, and reliability.
 
