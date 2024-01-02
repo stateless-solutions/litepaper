@@ -197,7 +197,7 @@ applications and various blockchain networks.
 
 Through a federated but heterogeneous node network, Stateless encourages data
 providers to continually refine and enhance their services and provers,
-fostering a competitive environment with a diverse range of offerings. This
+fostering a cooperative environment with a diverse range of offerings.This
 strategic development positions Stateless as a comprehensive "one-stop"
 infrastructure solution where consumers can not only access verifiable RPC but
 also choose from a variety of proof-based services tailored to their specific
