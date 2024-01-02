@@ -55,10 +55,10 @@ security, fault tolerance, and decentralization concerns. Centralized
 infrastructure providers such as Infura and Alchemy have a single point of
 failure, potentially compromising the security and reliability of applications.
 
-Decentralized providers such as Pocket and Lava have even lower barriers to
+Decentralized providers such as Pocket Network and Lava have even lower barriers to
 entry, requiring a nominal financial investment to begin serving data to
 production applications. These network protocols lack any direct protection for
-application developers, and will even inadvertently reward bad actors who serve
+application developers, and can inadvertently reward bad actors who serve
 fraudulent and malicious data.
 
 # Stateless Middleware: A Solution
@@ -83,8 +83,8 @@ of the existing attack vectors.
 
 While the issues identified have the most pronounced impact in the Ethereum
 ecosystem, Stateless middleware is designed to be adaptable to various
-blockchain networks, ensuring that the provided security enhancements can be
-applied to a wider range of blockchain based application development.
+blockchain and decentralized networks, ensuring that the provided security enhancements can be
+applied to a wider range of decentralized application development.
 
 ## Stateless From the Perspective of an Application Developer
 
@@ -124,15 +124,15 @@ codebase to as little as possible.
 # Roadmap and Future Developments
 
 Stateless has a clear roadmap for its development, focusing on both short-term
-and long-term goals that aim to revolutionize the blockchain infrastructure
-space, while remaining in lock step with the evolutions current and future
-blockchain networks.
+and long-term goals that aim to introduce critical decentralized infrastructure
+while remaining in step with the evolutions of current and upcoming data
+networks.
+
+Stateless aims to redefine the middleware landscape space by offering a secure and auditable API middleware solution that mitigates vulnerabilities between consumer requests and data node responses. The goal is to protect end consumers from data integrity failures and financial exploitation, ensuring a secure and efficient interface for both user access points and providers.
 
 **2023**: Launch permissioned decentralized middleware. This milestone focuses
 on developing and deploying a secure and fault-tolerant middleware solution
-that addresses the limitations of current offerings. By introducing a
-permissioned decentralized middleware, Stateless will set the stage for more
-advanced features and improvements in the coming years.
+that addresses the limitations of current offerings and provides applications with client side request verification.
 
 ```mermaid
 flowchart LR
@@ -156,21 +156,7 @@ flowchart LR
     G<-.->po1 & po2
 ```
 
-**2024**: Introduce a developer UI and shift consensus ownership to the
-application layer by integrating directly with existing standard libraries.
-Stateless will enhance developer experience by providing a user-friendly
-interface that simplifies the process of building and deploying applications on
-the platform.  By shifting consensus ownership to the application layer,
-Stateless will promote greater decentralization and empower developers with
-more control over their applications.
-
-**2025**: Generate additional revenue streams from value-added services. As the
-Stateless platform matures, the focus will shift towards expanding the
-ecosystem and offering a broader range of services. This will include building
-in hooks so application developers can charge fees for user incurred
-infrastructure costs, expanding into other blockchain ecosystems, offering
-decentralized APIs in untapped markets, and improving the performance of the
-ETH execution layer.
+**2024-2025**: Enhancing the autonomy of our users by expanding the range of tools available to data consumers, with a focus on integrating Infrastructure as Code (IaC) workflows, comprehensive integrated environments, and extensive tracing capabilities. These enhancements aim to increase application resilience and reduce dependency on the Stateless gateway, thereby mitigating potential points of failure and ensuring continuity of service.
 
 ```mermaid
 flowchart LR
@@ -197,26 +183,75 @@ flowchart LR
     po1 & po2 & po3<==>|Payment|G(Gateway)
 ```
 
-**2027-2030**: Establish a decentralized prover market that facilitates direct
-services between apps and nodes. In the long term, Stateless aims to create a
-robust and competitive market for decentralized provers. This will enable
-applications to interact directly with nodes, further decentralizing the
-ecosystem and enhancing the security and efficiency of the platform. By
-establishing a decentralized prover market, Stateless will solidify its
-position as a leading middleware solution in the blockchain industry.
+Leveraging our legacy verification services, Stateless will begin introducing
+proof services, a consumable light client, and extend safety guarantees to
+encompass indexing and streaming analytics, enhanced by value-add APIs, and
+support for non-blockchain computations such as peer-to-peer or LLM networks.
 
-These milestones will guide Stateless's growth and innovation, ensuring that
-the platform remains at the forefront of the blockchain middleware space. With
-a strong emphasis on security, decentralization, and developer experience,
-Stateless is poised to reshape the landscape for blockchain applications and
-services.
+Stateless's ZK initiatives aim to solidify the infrastructure that underpins
+both Layer 1 and Layer 2 solutions (L2s) by providing verifiable state for
+consumer light clients and proving the sequence of transactions before they are
+submitted to the base Layer 1 (L1) chain. This vital service aims to
+revolutionize the credibility and efficiency of the interactions between
+applications and various blockchain networks.
+
+Through a federated but heterogeneous node network, Stateless encourages data
+providers to continually refine and enhance their services and provers,
+fostering a competitive environment with a diverse range of offerings. This
+strategic development positions Stateless as a comprehensive "one-stop"
+infrastructure solution where consumers can not only access verifiable RPC but
+also choose from a variety of proof-based services tailored to their specific
+use cases.
+
+**2026**: Establish a decentralized prover market that catalyzes direct peer-to-peer connections between consumers and nodes, significantly enhancing the integrity and efficiency across decentralized ecosystems. This market will facilitate direct peer-to-peer connections, fostering a permisionless ecosystem for data consumers. The key to this ecosystem is the verifiable compute that underlies every service, ensuring that each transaction and interaction within the Stateless infrastructure is trustworthy and transparent. This initiative, grounded in a blockchain-agnostic ZK infrastructure, enables Stateless to substantiate any transaction on any network supported by the protocol.
+
+```mermaid
+graph LR
+
+User[User] <-.-> A
+
+  subgraph AppOwned
+    A[App Interface] <--> C[Light Client]
+  end
+
+  subgraph Stateless
+    subgraph Providers
+      D[Provider 1]
+      E[Provider 2]
+      F[Provider 3]
+    end
+
+    subgraph Provers
+      G[Prover 1]
+      H[Prover 2]
+      I[Prover 3]
+    end
+  end
+
+  C <-.->|Verified State| Providers
+  C <-.->|Proof| Provers
+```
+
+This evolution is redefines how decentralized infrastructure is accessed,
+offering secure, direct, and cost-effective transactions that align with the
+varied demands of various communities, seeking to eliminate the vulnerabilities
+associated with intermediary gateways, thus significantly bolstering market
+efficiency, security, and reliability.
 
 # Conclusion
 
-Stateless is committed to providing a robust middleware solution to enhance
-security in blockchain networks, addressing the risks associated with
-compromised operational trust. By offering a middleware solution that adapts to
-future advancements in blockchain technology and applies to various networks,
-Stateless aims to become an integral player in the evolving blockchain
-ecosystem.
+As decentralized ecosystems advance, the imperative for secure, reliable, and
+efficient middleware solutions become non-negotiable. Stateless has emerged in
+response to this need, targeting substantial vulnerabilities in existing
+execution layers, bringing an immediately consumable middleware solution that
+mitigates potential attack vectors and compromised operational trust associated
+with consumer access to market.
 
+Looking ahead, Stateless is building for a future where decentralized data
+consumers are liberated from existing vulnerabilities and dependencies on
+traditional gateways. Our path forward is marked by a dedication to evolving as
+a resilient protocol, crafting solutions that not only keep pace with but also
+actively contribute to the growth and evolution of core decentralized
+technologies.
+
+In this emerging world, where proofs and verifiable RPC become non-negotiable for supporting decentralized ecosystems at scale and enabling mass adoption, no other in market infrastructure solution is as well-positioned. By building the necessary foundation for a proof-based world, the Stateless protocol is not just a participant or a proxy, but a leader. As we advance, Stateless supplies a framework where security is harmoniously aligned with innovation, creating an ecosystem that is not only safer but also more efficient for all participants.
