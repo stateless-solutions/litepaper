@@ -254,4 +254,11 @@ a resilient protocol, crafting solutions that not only keep pace with but also
 actively contribute to the growth and evolution of core decentralized
 technologies.
 
-In this emerging world, where proofs and verifiable RPC become non-negotiable for supporting decentralized ecosystems at scale and enabling mass adoption, no other in market infrastructure solution is as well-positioned. By building the necessary foundation for a proof-based world, the Stateless protocol is not just a participant or a proxy, but a leader. As we advance, Stateless supplies a framework where security is harmoniously aligned with innovation, creating an ecosystem that is not only safer but also more efficient for all participants.
+In this emerging world, where proofs and verifiable RPC become non-negotiable
+for supporting decentralized ecosystems at scale and enabling mass adoption, no
+other in market infrastructure solution is as well-positioned. By building the
+necessary foundation for a proof-based world, the Stateless protocol is not
+just a participant or a proxy, but a leader. As we advance, Stateless supplies
+a framework where security is harmoniously aligned with innovation, creating an
+ecosystem that is not only safer but also more efficient for all participants.
+
