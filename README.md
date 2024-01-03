@@ -195,7 +195,13 @@ submitted to the base Layer 1 (L1) chain. This vital service aims to
 revolutionize the credibility and efficiency of the interactions between
 applications and various blockchain networks.
 
-Through a federated but heterogeneous node network, Stateless encourages data providers to continually refine and enhance their services and provers, fostering a cooperative environment with a diverse range of complementary offerings.This strategic development positions Stateless as a comprehensive "one-stop" infrastructure solution where consumers can not only access verifiable RPC but also choose from a variety of proof-based services tailored to their specific use cases.
+Through a federated but heterogeneous node network, Stateless encourages data
+providers to continually refine and enhance their services and provers,
+fostering a cooperative environment with a diverse range of complementary offerings.This
+strategic development positions Stateless as a comprehensive "one-stop"
+infrastructure solution where consumers can not only access verifiable RPC but
+also choose from a variety of proof-based services tailored to their specific
+use cases.
 
 **2026**: Establish a decentralized prover market that catalyzes direct peer-to-peer connections between consumers and nodes, significantly enhancing the integrity and efficiency across decentralized ecosystems. This market will facilitate direct peer-to-peer connections, fostering a permisionless ecosystem for data consumers. The key to this ecosystem is the verifiable compute that underlies every service, ensuring that each transaction and interaction within the Stateless infrastructure is trustworthy and transparent. This initiative, grounded in a blockchain-agnostic ZK infrastructure, enables Stateless to substantiate any transaction on any network supported by the protocol.
 
@@ -248,4 +254,11 @@ a resilient protocol, crafting solutions that not only keep pace with but also
 actively contribute to the growth and evolution of core decentralized
 technologies.
 
-In this emerging world, where proofs and verifiable RPC become non-negotiable for supporting decentralized ecosystems at scale and enabling mass adoption, no other in market infrastructure solution is as well-positioned. By building the necessary foundation for a proof-based world, the Stateless protocol is not just a participant or a proxy, but a leader. As we advance, Stateless supplies a framework where security is harmoniously aligned with innovation, creating an ecosystem that is not only safer but also more efficient for all participants.
+In this emerging world, where proofs and verifiable RPC become non-negotiable
+for supporting decentralized ecosystems at scale and enabling mass adoption, no
+other in market infrastructure solution is as well-positioned. By building the
+necessary foundation for a proof-based world, the Stateless protocol is not
+just a participant or a proxy, but a leader. As we advance, Stateless supplies
+a framework where security is harmoniously aligned with innovation, creating an
+ecosystem that is not only safer but also more efficient for all participants.
+
