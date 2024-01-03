@@ -2,9 +2,10 @@ name: Generate PDF
 
 on:
   push:
+    branches:
+      - 'main'
     paths:
-      - 'litepaper/litepaper.md'
-  workflow_dispatch:
+      - 'litepaper.md'
 
 jobs:
   build:
@@ -27,8 +28,12 @@ jobs:
     - name: Convert Markdown to PDF
       run: pandoc latex-includes.yaml litepaper.md -F mermaid-filter --variable urlcolor=cyan -o litepaper.pdf
 
+    - name: Mirror the README
+      run: cp litepaper.md README.md
+
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        file_pattern: "*.pdf"
+        file_pattern: "README.md *.pdf"
         commit_message: Render PDF
+
 
