@@ -7,13 +7,13 @@ author:
 
 # Introduction
 
-Stateless is a startup focused on addressing the middleware needs of blockchain
+Stateless is a verifiability protocol focused on addressing the middleware needs of decentralized
 networks. This initiative was born out of the recognition that various attack
-vectors exist within the design patterns of existing blockchain applications,
+vectors exist within the design patterns of existing web3 applications,
 with significant exposure in the Ethereum ecosystem. Stateless aims to mitigate
 these risks by providing a robust middleware solution, allowing application
-developers to provider their users with enhanced security when interacting
-with blockchain networks.
+developers to provide their users with enhanced security when interacting
+with distributed systems.
 
 # Problem Statement
 
