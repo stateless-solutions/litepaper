@@ -51,7 +51,7 @@ the web3 ecosystem including, but not limited to:
 ## Limitations of Current Infrastructure Providers
 
 Existing solutions in the market have some notable limitations, including
-security, fault tolerance, and decentralization concerns. Centralized
+security, fault tolerance, and high barriers to decentralizing. Centralized
 infrastructure providers such as Infura and Alchemy have a single point of
 failure, potentially compromising the security and reliability of applications.
 
@@ -64,12 +64,12 @@ fraudulent and malicious data.
 # Stateless Middleware: A Solution
 
 Stateless is designed to address the security needs of blockchain application
-developers and their users by providing a middleware solution that enhances
+developers and their users by providing an efficient middleware solution that enhances
 security without the need for developers to make any changes to their existing
-codebase. Stateless middleware allows applications to utilize multiple
-independent provider sources, requiring a malicious actor to compromise
+codebase. Stateless APIs allow applications to utilize and verify multiple
+independent provider sources operating custom client software, requiring a malicious actor to compromise
 multiple independent providers simultaneously, as opposed to the current
-landscape which only requires one.
+landscape which only requires one. In addition to immediately protecting from zero-day trust compromises at the consumer access level, our real-time client side verifiability increases the operational and capital efficiency of day-to-day data interactions with idempotent and auditable requests. 
 
 ## Enhanced Security for All
 
