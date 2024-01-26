@@ -203,7 +203,7 @@ infrastructure solution where consumers can not only access verifiable RPC but
 also choose from a variety of proof-based services tailored to their specific
 use cases.
 
-**2026**: Establish a decentralized prover market that catalyzes direct peer-to-peer connections between consumers and nodes, significantly enhancing the integrity and efficiency across decentralized ecosystems. This market will facilitate direct peer-to-peer connections, fostering a permisionless ecosystem for data consumers. The key to this ecosystem is the verifiable compute that underlies every service, ensuring that each transaction and interaction within the Stateless infrastructure is trustworthy and transparent. This initiative, grounded in a blockchain-agnostic ZK infrastructure, enables Stateless to substantiate any transaction on any network supported by the protocol.
+**2026**: Establish a decentralized prover market that enhances the integrity and efficiency of decentralized ecosystems by catalyzing direct peer-to-peer connection, consumption, and payment between consumers and nodes. This permissionless ecosystem, built on the foundation of verifiable compute, ensures the trustworthiness and transparency of every interaction. With blockchain-agnostic proof infrastructure, Stateless enables the client-side validation of data requests across any supported network or service through a combination of trust-minimized and trustless operations.
 
 ```mermaid
 graph LR
@@ -231,6 +231,9 @@ User[User] <-.-> A
   C <-.->|Verified State| Providers
   C <-.->|Proof| Provers
 ```
+As the Stateless protocol matures, the existing compute credit system will evolve into a fully-fledged economy, underpinning the marketplace with a token-based model that encapsulates both transactional fluidity and incentivized participation. These compute credits, integral to our operational framework, will transition to facilitate not just transactional exchanges but drive additional economic activities within the network that bolster the demand side needs of the network.
+
+The token economy is designed to support advanced verification processes and ensure they remain seamless as the network scales. Compensation is tightly linked to service quality through the protocol's native ability to audit work performed and measure performance metrics. This design maintains a close coupling of service excellence with appropriate rewards, promoting a high-performance standard across the network. Network equilibrium is further achieved through stakeholder participation in subsidizing operations, enhancing security, and reinforcing quality, advocating for demand side network effects and preventing operator-centric governance. 
 
 This evolution is redefines how decentralized infrastructure is accessed,
 offering secure, direct, and cost-effective transactions that align with the
