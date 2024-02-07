@@ -20,7 +20,7 @@ with distributed systems.
 The design patterns encouraged by the current Ethereum Execution API and other
 blockchain APIs which have taken inspiration from Ethereum have attack vectors
 that exist in situations of compromised operational trust between an
-application interface acting as an RPC consumer and an independent RPC
+application interface acting as a data consumer and an independent data
 provider. Should that operational trust be compromised, these attacks **cannot
 currently be mitigated** in real-time and **cannot be detected historically**
 in an audit of event logs.  Proposed solutions such as light clients provide
