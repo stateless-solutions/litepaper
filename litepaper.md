@@ -7,18 +7,12 @@ author:
 
 # Introduction
 
-Stateless is a verifiability protocol focused on addressing the middleware needs of decentralized
-networks. This initiative was born out of the recognition that various attack
-vectors exist within the design patterns of existing web3 applications,
-with significant exposure in the Ethereum ecosystem. Stateless aims to mitigate
-these risks by providing a robust middleware solution, allowing application
-developers to provide their users with enhanced security when interacting
-with distributed systems.
+Stateless is an arbitration protocol that provides a trustless verification standard for decentralized networks. By developing robust verification models and distributing them through open-source software (OSS) and service providers, we enhance security for application developers and their users. Stateless ensures secure, reliable data interactions through real-time dispute resolution and data integrity verification, addressing critical vulnerabilities in decentralized applications with minimal changes to existing codebases.
 
 # Problem Statement
 
 The design patterns encouraged by the current Ethereum Execution API and other
-blockchain APIs which have taken inspiration from Ethereum have attack vectors
+decentralized APIs which have taken inspiration from Ethereum have attack vectors
 that exist in situations of compromised operational trust between an
 application interface acting as a data consumer and an independent data
 provider. Should that operational trust be compromised, these attacks **cannot
@@ -28,9 +22,9 @@ long-term, cryptographic approaches to address these issues. However, they are
 not near-term applicable, leaving applications and users currently exposed to
 risks.
 
-## Risks to Applications
+## Risks to Applications and Consumers
 
-The risks that certain applications face if provider trust is compromised,
+The risks that certain applications and their consumers face if provider trust is compromised,
 includes:
 
 - **Indirect Theft of Funds** through maliciously created MEV arbitrage
@@ -61,38 +55,45 @@ production applications. These network protocols lack any direct protection for
 application developers, and can inadvertently reward bad actors who serve
 fraudulent and malicious data.
 
-# Stateless Middleware: A Solution
+# Solution: Stateless Verification Standards
 
-Stateless is designed to address the security needs of blockchain application
-developers and their users by providing an efficient middleware solution that enhances
-security without the need for developers to make any changes to their existing
-codebase. Stateless APIs allow applications to utilize and verify multiple
-independent provider sources operating custom client software, requiring a malicious actor to compromise
-multiple independent providers simultaneously, as opposed to the current
-landscape which only requires one. In addition to immediately protecting from zero-day trust compromises at the consumer access level, our real-time client side verifiability increases the operational and capital efficiency of day-to-day data interactions with idempotent and auditable requests. 
+Stateless addresses the security needs of blockchain application developers and their users by providing a robust verification standard. This standard makes decentralized data deterministic, auditable, and verifiable. Our framework involves implementing changes at the client, execution, and compiler levels, which are open-sourced through Stateless SDKs. These changes can be enshrined into core protocols, or our clients can be utilized to bring these capabilities to any existing platform or service. From the consumer or developer perspective, workflows remain unchanged as our clients are backward compatible ensuring a seamless transition to enhanced security.
 
-## Enhanced Security for All
+When protocols and providers adopt our verification standard, they automatically make the requests on those platforms auditable and provide the necessary tools to aggregate multiple providers. This significantly enhances security, requiring a malicious actor to compromise multiple independent providers simultaneously rather than just one.
 
-Stateless middleware enables applications to add a mitigation layer simply by
-wrapping their API provider layer, minimizing any changes to just at most a few
-lines of code. Given the open development nature of blockchain applications,
-and the prevalence of forks across the ecosystem, it was essential to allow any
-developer to easily protect their users, regardless if they sufficiently
-understood the original code to adapt it in response to the public disclosure
-of the existing attack vectors.
+## Disputes and Arbitration  
 
-While the issues identified have the most pronounced impact in the Ethereum
-ecosystem, Stateless middleware is designed to be adaptable to various
-blockchain and decentralized networks, ensuring that the provided security enhancements can be
-applied to a wider range of decentralized application development.
+While Stateless does not provide services directly through our network, we offer client standards and frameworks that others use to deliver verifiable and trustless data through their services. The primary role of the Stateless protocol is to act as an arbitrator in the event of disputes related to data integrity or trust failures. Instead of bundling risk into the entire service, we acknowledge its presence and focus on adding value at the point of consumption. Stateless opts for an optimistic solution where risks can be pooled, providers can be punished, and users can be compensated for any losses.
 
-## Stateless From the Perspective of an Application Developer
+<p align="center"><img width="643" alt="Screenshot 2024-06-05 at 6 22 09 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/1498af54-f24f-448a-9a72-3ef55bdfbe07"></p>
 
-The first iteration of Stateless will be focused on building a
+### Tokenomics and Protocol Actors
+
+The Stateless Protocol utilizes the SSL token to underpin its economic model, ensuring secure and reliable interactions within its ecosystem. The tokenomics strategy aims to balance long-term protocol health with the needs of users, providers, and other participants. Below is an overview of the key design decisions, token dynamics, and initial use cases.
+
+**Pool Managers:**
+Pool Managers (“Managers”) develop pool strategies and manage those strategies. For their role, Managers earn a percentage of the fees created by the pool, dictated by the Pool Manager. A reader may liken these to providers on EigenLayer where restakers are relying on the provider to provide security/services to AVSs but are punished if the provider fails to provide good services. 
+
+**Data Providers:**
+Compute Providers (“Providers”) run the Stateless client, stake SSL, and provide data to Data Consumers. Responsible for responding to challenge transactions, and validating or invalidating challenges involving third-party providers.
+
+**Data Consumers:**
+Data Consumers (“Consumers”) consume data and pay into risk pools. 
+
+A note: We envision that it may take some time for Stateless to provide frictionless payment mechanisms. We imagine that other parties may pay into the pools in place of the actual data consumer. This approach has its own merits.
+
+**Stakers/Restakers:**
+Stakers/Restakers (“Stakers”) provide stakes (capital) that protect Consumers and receive payments from Consumers (or other interested parties) in exchange for their risk. Stakers provide governance oversight (by staking SSL) to Managers and arbitration proceedings.
+
+**Stakeholders:**
+SSL Stakers (“Stakeholders”) acquire and stake SSL on behalf of Managers in one or more pools in exchange for a portion of the management fees of the pools. As management fees increase, so does the real yield for SSL stakeholders. Stakeholders, like Stakers, are keen to profit from participation in the protocol, but might not be willing to accept the risk of participating in a pool. To generate interest and attraction from these individuals, we designed a staking-style mechanism where investors can stake to be eligible for protocol fees in proportion to the amount the investor staked. 
+
+## Proof of Concept: Verifiable RPC
+The first iteration of Stateless focused on building a
 frictionless experience for application developers to secure their
 existing applications.
 
-Application developers will have access to both a CLI and HTTPS API for
+Application developers have access to both a CLI and HTTPS API for
 managing "buckets" of independent providers. The application will be able to
 select as many providers as they wish to attempt to source data from, as well
 as the number of attestations they require to accept that data, similar to the
@@ -102,37 +103,6 @@ from multiple providers, and will have a clear picture of the impacts of their
 choices. Developers will be able to modify and view their existing buckets
 either interactively through the CLI, or programmatically in their existing
 CI/CD pipelines.
-
-Once their bucket has been setup, developers will be able to create an invoice
-contract to manage the billing of any buckets that they've created. Once that
-invoice contract has been deployed, anyone is able to send a custom restricted
-ERC-20 token functioning as Compute Credits to that invoice contract. The
-Compute Credit ERC-20 will not be a liquid speculative token. This token will
-only be exchangeable for whitelisted stablecoins, and can only be sent to
-existing invoices or returned back for stablecoins. Once the credits have
-been sent to the invoice, any usage will be drawn out of that invoice by
-an account owned by Stateless based on observed network usage. The invoice
-owner will be free to stop billing and withdraw any remaining credits at
-any point in time.
-
-Finally, the experience of integrating the provider bucket can be as simple as
-replacing the existing RPC URL in the interface if the developer chooses, or
-to eliminate any integrity trust, simply wrapping their existing provider
-with a lightweight wrapper. Minimizing any code changes in their existing
-codebase to as little as possible.
-
-# Roadmap and Future Developments
-
-Stateless has a clear roadmap for its development, focusing on both short-term
-and long-term goals that aim to introduce critical decentralized infrastructure
-while remaining in step with the evolutions of current and upcoming data
-networks.
-
-Stateless aims to redefine the middleware landscape space by offering a secure and auditable API middleware solution that mitigates vulnerabilities between consumer requests and data node responses. The goal is to protect end consumers from data integrity failures and financial exploitation, ensuring a secure and efficient interface for both user access points and providers.
-
-**2023**: Launch permissioned decentralized middleware. This milestone focuses
-on developing and deploying a secure and fault-tolerant middleware solution
-that addresses the limitations of current offerings and provides applications with client side request verification.
 
 ```mermaid
 flowchart LR
@@ -156,54 +126,27 @@ flowchart LR
     G<-.->po1 & po2
 ```
 
-**2024-2025**: Enhancing the autonomy of our users by expanding the range of tools available to data consumers, with a focus on integrating Infrastructure as Code (IaC) workflows, comprehensive integrated environments, and extensive tracing capabilities. These enhancements aim to increase application resilience and reduce dependency on the Stateless gateway, thereby mitigating potential points of failure and ensuring continuity of service.
+Once their bucket has been setup, developers will can create an invoice
+contract to manage the billing of any buckets that they've created. Once that
+invoice contract has been deployed, anyone is able to send a custom restricted
+ERC-20 token functioning as Compute Credits to that invoice contract. The
+Compute Credit ERC-20 will not be a liquid speculative token. This token will
+only be exchangeable for whitelisted stablecoins, and can only be sent to
+existing invoices or returned back for stablecoins. Once the credits have
+been sent to the invoice, any usage will be drawn out of that invoice by
+an account owned by Stateless based on observed network usage. The invoice
+owner will be free to stop billing and withdraw any remaining credits at
+any point in time.
 
-```mermaid
-flowchart LR
-    U(User)<-.->A(App Interface)
-    subgraph "App Owned"
-        direction LR
-        A<-->M(Consensus Logic)
-    end
-    subgraph "Provider Bucket"
-        subgraph po1["Provider 1"]
-            direction LR
-            P1(Independent API Client 1)<-->|Verfied Data|D1(Underlying Blockchain)
-        end
-        subgraph po2["Provider 2"]
-            direction LR
-            P2(Independent API Client 2)<-->|Verfied Data|D2(Underlying Blockchain)
-        end
-        subgraph po3["Provider 3"]
-            direction LR
-            P3(Independent API Client 3)<-->|Verfied Data|D3(Underlying Blockchain)
-        end
-    end
-    M<-.->po1 & po2 & po3
-    po1 & po2 & po3<==>|Payment|G(Gateway)
-```
+Finally, the experience of integrating the provider bucket can be as simple as
+replacing the existing RPC URL in the interface if the developer chooses, or
+to eliminate any integrity trust, simply wrapping their existing provider
+with a lightweight wrapper, minimizing any code changes in their existing
+codebase to as little as possible.
 
-Leveraging our legacy verification services, Stateless will begin introducing
-proof services, a consumable light client, and extend safety guarantees to
-encompass indexing and streaming analytics, enhanced by value-add APIs, and
-support for non-blockchain computations such as peer-to-peer or LLM networks.
+# Roadmap and Future Developments
 
-Stateless's ZK initiatives aim to solidify the infrastructure that underpins
-both Layer 1 and Layer 2 solutions (L2s) by providing verifiable state for
-consumer light clients and proving the sequence of transactions before they are
-submitted to the base Layer 1 (L1) chain. This vital service aims to
-revolutionize the credibility and efficiency of the interactions between
-applications and various blockchain networks.
-
-Through a federated but heterogeneous node network, Stateless encourages data
-providers to continually refine and enhance their services and provers,
-fostering a cooperative environment with a diverse range of complementary offerings.This
-strategic development positions Stateless as a comprehensive "one-stop"
-infrastructure solution where consumers can not only access verifiable RPC but
-also choose from a variety of proof-based services tailored to their specific
-use cases.
-
-**2026**: Establish a decentralized prover market that enhances the integrity and efficiency of decentralized ecosystems by catalyzing direct peer-to-peer connection, consumption, and payment between consumers and nodes. This permissionless ecosystem, built on the foundation of verifiable compute, ensures the trustworthiness and transparency of every interaction. With blockchain-agnostic proof infrastructure, Stateless enables the client-side validation of data requests across any supported network or service through a combination of trust-minimized and trustless operations.
+**2024 Testnet:** Stateless is focusing on leveraging its foundational infrastructure to build and enhance the architecture for a proof based consumer light client framework. The protocol will also diversify to support AI (non-blockchain) applications, ensuring our verification standards are applicable across a broader range of data sources. The first limited testnet of the arbitration protocol and systems for API key management and provider aggregation will launch in Q4. 
 
 ```mermaid
 graph LR
@@ -231,20 +174,12 @@ User[User] <-.-> A
   C <-.->|Verified State| Providers
   C <-.->|Proof| Provers
 ```
-As the Stateless protocol matures, the existing compute credit system will evolve into a fully-fledged economy, underpinning the marketplace with a token-based model that encapsulates both transactional fluidity and incentivized participation. These compute credits, integral to our operational framework, will transition to facilitate not just transactional exchanges but drive additional economic activities within the network that bolster the demand side needs of the network.
 
-The token economy is designed to support advanced verification processes and ensure they remain seamless as the network scales. Compensation is tightly linked to service quality through the protocol's native ability to audit work performed and measure performance metrics. This design maintains a close coupling of service excellence with appropriate rewards, promoting a high-performance standard across the network. Network equilibrium is further achieved through stakeholder participation in subsidizing operations, enhancing security, and reinforcing quality, advocating for demand side network effects and preventing operator-centric governance. 
+**2025 Mainnet:** The Stateless protocol will establish addtional risk pools, develop risk aggregators, and further align fee mechanisms with streaming payments. Additionally, we will release service provider SDKs and enhance our open-source software (OSS) offerings, including clients and explorers. With these elements in place, we will launch our mainnet and transition to a fully tokenized economy. 
 
-This evolution is redefines how decentralized infrastructure is accessed,
-offering secure, direct, and cost-effective transactions that align with the
-varied demands of various communities, seeking to eliminate the vulnerabilities
-associated with intermediary gateways, thus significantly bolstering market
-efficiency, security, and reliability.
+<p align="center"><img width="1084" alt="Screenshot 2024-06-05 at 6 28 30 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/79c38dbb-06cd-41dc-a802-a222c22e32ef"></p>
+
 
 # Conclusion
 
-In the evolving landscape of decentralized ecosystems, the necessity for secure, efficient, and transparent middleware solutions is undeniable. Stateless emerges in response to this need, targeting critical vulnerabilities in decentralized data execution and offering a seamless solution that redefines the interaction between networks and users.
-
-Our vision extends beyond mitigating risks. We aim to transform the infrastructure of decentralized data interaction, ensuring verifiable computation and integrity become the bedrock of decentralized data operations. Stateless is shaping a future where trust-minimized operations replace trusted gateways, fostering a more secure, efficient, and inclusive digital economy.
-
-In the emerging proof-based paradigm, Stateless is the bridge for closing the gap in this transition toward a model of data autonomy replacing trusted intermediaries with verifiable, transparent, and efficient access points. As we stand at the forefront of this transformative era, Stateless is not just building solutions; we are pioneering a new standard in the decentralized landscape. 
+As web3 continues to expand, the risks outlined in this paper become increasingly critical. Stateless provides the essential infrastructure to facilitate a risk-minimized, verifiable, and trustless transition for this new data economy. By ensuring robust security and data integrity through our verification standards, we enable a seamless and secure experience for both developers and consumers.
