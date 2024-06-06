@@ -7,7 +7,7 @@ author:
 
 # Introduction
 
-Stateless is an arbitration protocol that provides a trustless verification standard for decentralized networks. By developing robust verification models and distributing them through open-source software (OSS) and service providers, we enhance security for application developers and their users. Stateless ensures secure, reliable data interactions through real-time dispute resolution and data integrity verification, addressing critical vulnerabilities in decentralized applications with minimal changes to existing codebases.
+Stateless is an arbitration protocol that provides trustless verification standards for decentralized networks. By developing robust verification models and distributing them through open-source software (OSS) and service providers, we enhance security for application developers and their users. Stateless ensures secure, reliable data interactions through real-time dispute resolution and data integrity verification, addressing critical vulnerabilities in decentralized applications with minimal changes to existing codebases.
 
 # Problem Statement
 
