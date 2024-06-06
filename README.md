@@ -175,7 +175,7 @@ User[User] <-.-> A
   C <-.->|Proof| Provers
 ```
 
-**2025 Mainnet:** The Stateless protocol will establish addtional risk pools, develop risk aggregators, and further align fee mechanisms with streaming payments. Additionally, we will release service provider SDKs and enhance our open-source software (OSS) offerings, including clients and explorers. With these elements in place, we will launch our mainnet and transition to a fully tokenized economy. 
+**2025 Mainnet:** The Stateless protocol will establish additional risk pools, develop risk aggregators, and further align fee mechanisms with streaming payments. Additionally, we will release service provider SDKs and enhance our open-source software (OSS) offerings, including clients and explorers. With these elements in place, we will launch our mainnet and transition to a fully tokenized economy. 
 
 <p align="center"><img width="1084" alt="Screenshot 2024-06-05 at 6 28 30 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/79c38dbb-06cd-41dc-a802-a222c22e32ef"></p>
 
