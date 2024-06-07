@@ -111,15 +111,15 @@ flowchart LR
     subgraph "Provider Bucket"
         subgraph go["Gateway Proivder"]
             direction LR
-            P0(Gateway API Client)<-->|Verfied Data|D0(Underlying Blockchain)
+            P0(Gateway API Client)<-->|Verified Data|D0(Underlying Blockchain)
         end
         subgraph po1["Provider 1"]
             direction LR
-            P1(Independent API Client 1)<-->|Verfied Data|D1(Underlying Blockchain)
+            P1(Independent API Client 1)<-->|Verified Data|D1(Underlying Blockchain)
         end
         subgraph po2["Provider 2"]
             direction LR
-            P2(Independent API Client 2)<-->|Verfied Data|D2(Underlying Blockchain)
+            P2(Independent API Client 2)<-->|Verified Data|D2(Underlying Blockchain)
         end
     end
     G<-->go
