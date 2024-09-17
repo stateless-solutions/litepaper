@@ -7,20 +7,15 @@ author:
 
 # Introduction
 
-Stateless is a verification protocol that provides trustless standards for transporting data between decentralized networks and offchain environments. By developing robust verification models and distributing them through open-source software (OSS) and service providers, we enhance security for application developers and their users. Stateless ensures secure, reliable data interactions through real-time dispute resolution and data integrity verification, addressing critical vulnerabilities in decentralized applications with minimal changes to existing codebases.
+Stateless is a risk management protocol and analytics platform designed to mitigate the vulnerabilities associated with offchain data interactions and computation in blockchain, AI, and DeCompute networks. By enabling secure, reliable, and transparent data flows between decentralized applications (dApps), networks, and data providers with a framework for data verification, risk analysis, and settlement, Stateless addresses critical vulnerabilities in decentralized networks with minimal changes to existing codebases.
 
 # Problem Statement
 
-The design patterns encouraged by the current Ethereum Execution API and other
-decentralized APIs which have taken inspiration from Ethereum have attack vectors
-that exist in situations of compromised operational trust between an
-application interface acting as a data consumer and an independent data
-provider. Should that operational trust be compromised, these attacks **cannot
-currently be mitigated** in real-time and **cannot be detected historically**
-in an audit of event logs.  Proposed solutions such as light clients provide
-long-term, cryptographic approaches to address these issues. However, they are
-not near-term applicable, leaving applications and users currently exposed to
-risks.
+Decentralized applications (dApps) rely extensively on third-party data and offchain computations, but these interactions lack robust verification standards and log-level traceability. This absence leaves stakeholders, including users and developers, vulnerable to various risks, such as data manipulation, service degradation, and financial loss, with no reliable way to verify or measure the integrity of the data they consume.
+
+Current execution design patterns, like those in the Ethereum Execution API and similar decentralized data interfaces, expose critical vulnerabilities when the trust between data consumers (applications) and data providers (RPC nodes, indexers, GPUs/AI models, etc.) is compromised. In these cases, malicious behavior, self-dealing, and poor-quality service are challenging to mitigate in real time and nearly impossible to detect and quantify through retrospective audits. While cryptographic solutions like light clients provide long-term methods for data verification, they are not feasible for immediate implementation across decentralized networks.
+
+Traditional approaches to data verification—whether hardware-based, like embedding public/private key pairs or using trusted execution environments (TEEs), or software-based, such as consensus mechanisms and validity proofs—are often impractical or insufficient. Hardware methods can impose permissioning constraints and require specialized equipment vulnerable to hacks, while software solutions can be too resource-intensive for real-time operations.
 
 ## Risks to Applications and Consumers
 
@@ -42,28 +37,27 @@ the web3 ecosystem including, but not limited to:
 - NFTs
 - Reusable Account Abstraction Entrypoints (ERC-4337)
 
-## Limitations of Current Infrastructure Providers
+#  Solution: Verification Layers, Risk Analysis, and Settlement Protocol
 
-Existing solutions in the market have some notable limitations, including
-security, fault tolerance, and high barriers to decentralizing. Centralized
-infrastructure providers such as Infura and Alchemy have a single point of
-failure, potentially compromising the security and reliability of applications.
+Stateless provides a comprehensive solution for securing decentralized data operations by leveraging our open-source verification standards and advanced risk management framework. Our foundational proof of concept focused on building a frictionless experience for application developers with Verifiable RPC APIs, setting the groundwork for a broader, more robust ecosystem.
 
-Decentralized providers such as Pocket Network and Lava have even lower barriers to
-entry, requiring a nominal financial investment to begin serving data to
-production applications. These network protocols lack any direct protection for
-application developers, and can inadvertently reward bad actors who serve
-fraudulent and malicious data.
+Building on this foundation, we have developed a light client framework and a compatibility layer for EVM, both of which are already available. The light client framework enables proof-based verification directly on client devices, enabling decentralized applications (dApps) to verify data integrity without relying on centralized infrastructure. This framework provides cryptographic assurances for every data interaction, ensuring data is secure, auditable, and deterministic.
 
-# Solution: Stateless Verification Standards
+<p align="center"><img width="643" alt="Screenshot 2024-06-05 at 6 22 09 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/1498af54-f24f-448a-9a72-3ef55bdfbe07"></p>
 
-Stateless addresses the security needs of blockchain application developers and their users by providing a robust verification standard. This standard makes decentralized data deterministic, auditable, and verifiable. Our framework involves implementing changes at the client, execution, and compiler levels, which are open-sourced through Stateless SDKs. These changes can be enshrined into core protocols, or our clients can be utilized to bring these capabilities to any existing platform or service. From the consumer or developer perspective, workflows remain unchanged as our clients are backward compatible ensuring a seamless transition to enhanced security.
+The EVM compatibility layer enables seamless integration with Ethereum-based environments, allowing developers to adopt our verification standards without significant changes to their existing workflows. By supporting backward compatibility, this layer ensures that any EVM-compatible network can utilize our verification tools, expanding the reach and utility of our standards across multiple decentralized platforms.
 
-When protocols and providers adopt our verification standard, they automatically make the requests on those platforms auditable and provide the necessary tools to aggregate multiple providers. This significantly enhances security, requiring a malicious actor to compromise multiple independent providers simultaneously rather than just one.
+## Application Proxy and Data Collection 
 
-## Disputes and Arbitration  
+Applications can utilize our proxy service to route their data through Stateless, enabling real-time verification and analysis without needing their networks or providers to change their existing setups. This flexibility ensures that the application can still benefit from Stateless’s security and risk management services even if a provider has not yet adopted our verification standard. The proxy layer acts as an intermediary, normalizing data into a format our analytics platform can process.
 
-While Stateless does not provide services directly through our network, we offer client standards and frameworks that others use to deliver verifiable and trustless data through their services. The primary role of the Stateless protocol is to act as an arbitrator in the event of disputes related to data integrity or trust failures. Instead of bundling risk into the entire service, we acknowledge its presence and focus on adding value at the point of consumption. Stateless opts for an optimistic solution where risks can be pooled, providers can be punished, and users can be compensated for any losses.
+By collecting this request/response data, Stateless builds a robust data lake that supports public and private insights. This data informs our risk models, contributing to a dynamic risk prediction market that adjusts coverage requirements and drives automated settlements based on real-time assessments.
+
+## Data Analytics, Prediction, and Risk Management
+
+The stateless platform offers advanced analytics capabilities that turn raw data into actionable insights. Our analytics engine continuously evaluates risk based on aggregated data from diverse decentralized compute environments, including those using non-standard infrastructure. This data allows organizations to see how users interact with their frontends, detect bots, and identify issues such as incorrect pricing or misdirected tokens. 
+
+These insights support a dynamic risk prediction market, allowing for real-time adjustments to risk levels and enhancing the ecosystem’s overall security. By providing a comprehensive understanding of risk exposure, the Stateless platform enables networks, applications, and organizations to proactively address vulnerabilities, ensuring a secure and resilient environment for decentralized operations.
 
 <p align="center"><img width="643" alt="Screenshot 2024-06-05 at 6 22 09 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/1498af54-f24f-448a-9a72-3ef55bdfbe07"></p>
 
@@ -88,98 +82,27 @@ Stakers/Restakers (“Stakers”) provide stakes (capital) that protect Consumer
 **Stakeholders:**
 SSL Stakers (“Stakeholders”) acquire and stake SSL on behalf of Managers in one or more pools in exchange for a portion of the management fees of the pools. As management fees increase, so does the real yield for SSL stakeholders. Stakeholders, like Stakers, are keen to profit from participation in the protocol, but might not be willing to accept the risk of participating in a pool. To generate interest and attraction from these individuals, we designed a staking-style mechanism where investors can stake to be eligible for protocol fees in proportion to the amount the investor staked. 
 
-## Proof of Concept: Verifiable RPC
-The first iteration of Stateless focused on building a
-frictionless experience for application developers to secure their
-existing applications.
-
-Application developers have access to both a CLI and HTTPS API for
-managing "buckets" of independent providers. The application will be able to
-select as many providers as they wish to attempt to source data from, as well
-as the number of attestations they require to accept that data, similar to the
-experience of setting up a multisig Safe wallet. Developers will have full
-control of any performance trade-offs that would be made from now sourcing data
-from multiple providers, and will have a clear picture of the impacts of their
-choices. Developers will be able to modify and view their existing buckets
-either interactively through the CLI, or programmatically in their existing
-CI/CD pipelines.
-
-```mermaid
-flowchart LR
-    U(User)<-.->A(App Interface)
-    A<-->G(Gateway)
-    subgraph "Provider Bucket"
-        subgraph go["Gateway Proivder"]
-            direction LR
-            P0(Gateway API Client)<-->|Verified Data|D0(Underlying Blockchain)
-        end
-        subgraph po1["Provider 1"]
-            direction LR
-            P1(Independent API Client 1)<-->|Verified Data|D1(Underlying Blockchain)
-        end
-        subgraph po2["Provider 2"]
-            direction LR
-            P2(Independent API Client 2)<-->|Verified Data|D2(Underlying Blockchain)
-        end
-    end
-    G<-->go
-    G<-.->po1 & po2
-```
-
-Once their bucket has been setup, developers will can create an invoice
-contract to manage the billing of any buckets that they've created. Once that
-invoice contract has been deployed, anyone is able to send a custom restricted
-ERC-20 token functioning as Compute Credits to that invoice contract. The
-Compute Credit ERC-20 will not be a liquid speculative token. This token will
-only be exchangeable for whitelisted stablecoins, and can only be sent to
-existing invoices or returned back for stablecoins. Once the credits have
-been sent to the invoice, any usage will be drawn out of that invoice by
-an account owned by Stateless based on observed network usage. The invoice
-owner will be free to stop billing and withdraw any remaining credits at
-any point in time.
-
-Finally, the experience of integrating the provider bucket can be as simple as
-replacing the existing RPC URL in the interface if the developer chooses, or
-to eliminate any integrity trust, simply wrapping their existing provider
-with a lightweight wrapper, minimizing any code changes in their existing
-codebase to as little as possible.
-
 # Roadmap and Future Developments
 
-**2024 Testnet:** Stateless is focusing on leveraging its foundational infrastructure to build and enhance the architecture for a proof based consumer light client framework. The protocol will also diversify to support AI (non-blockchain) applications, ensuring our verification standards are applicable across a broader range of data sources. The first limited testnet of the arbitration protocol and systems for API key management and provider aggregation will launch in Q4. 
+Stateless is evolving rapidly to address the needs of decentralized applications and infrastructure providers through a comprehensive suite of products, open-source tooling, and a decentralized risk management protocol.
 
-```mermaid
-graph LR
+2024 Testnet: The deployment will include the first versions of our public and private risk dashboards, which provide general risk insights and application-specific analytics. These dashboards allow stakeholders to understand potential vulnerabilities and implement data-driven risk mitigation strategies. 
 
-User[User] <-.-> A
+At the same time, our existing proof-based consumer light client framework and EVM compatibility layer will be integrated into the testnet. These tools enable seamless interoperability with EVM-compatible networks and decentralized data sources, allowing for direct data verification at the client level and enhancing the security of decentralized applications without relying on centralized infrastructure. 
 
-  subgraph AppOwned
-    A[App Interface] <--> C[Light Client]
-  end
+The initial rollout will feature our Proxy and Audit Services, which empower applications to route their data through Stateless for real-time verification and analysis, offering enhanced security with minimal changes to existing network infrastructure.
 
-  subgraph Stateless
-    subgraph Providers
-      D[Provider 1]
-      E[Provider 2]
-      F[Provider 3]
-    end
+2025 Mainnet: introduce further enhancements, including advanced risk modeling tools and establishing managed risk pools. These innovations will enable dynamic assessment and management of risk exposure across decentralized networks, providing a robust framework for mitigating potential threats and compensating for any faults detected. We will also launch new capabilities for detecting Sybil attacks and bot activity, expanding the use cases for our risk analysis. 
 
-    subgraph Provers
-      G[Prover 1]
-      H[Prover 2]
-      I[Prover 3]
-    end
-  end
-
-  C <-.->|Verified State| Providers
-  C <-.->|Proof| Provers
-```
-
-**2025 Mainnet:** The Stateless protocol will establish additional risk pools, develop risk aggregators, and further align fee mechanisms with streaming payments. Additionally, we will release service provider SDKs and enhance our open-source software (OSS) offerings, including clients and explorers. With these elements in place, we will launch our mainnet and transition to a fully tokenized economy. 
+Deploying our comprehensive Data Lake and Analytics Platform, which aggregates data from various decentralized compute environments, will support these enhancements. This platform will provide deep insights into data flows, user interactions, and network performance, supporting risk analysis and prediction models that enable an arbitration and settlement system.
 
 <p align="center"><img width="1084" alt="Screenshot 2024-06-05 at 6 28 30 PM" src="https://github.com/stateless-solutions/litepaper/assets/55156619/79c38dbb-06cd-41dc-a802-a222c22e32ef"></p>
 
+With the data management processes in place, introducing the SSL token will facilitate data-sharing incentives, enable governance participation, and support staking mechanisms for risk coverage, reinforcing the security and reliability of interactions within the ecosystem. 
+
+Simultaneously, we will launch specialized AI Execution Risk Dashboards to extend our blockchain risk management framework into the domain of AI model execution. These tools will provide detailed insights into AI models' operational integrity and performance across decentralized environments, ensuring their reliability and security. 
+Finally, we will integrate automated settlement processes with our dynamic prediction market, allowing real-time repricing based on observed risk levels and seamless compensation for verified faults. This integration will create a self-sustaining ecosystem that continuously adapts to maintain trust and security.
 
 # Conclusion
 
-As web3 continues to expand, the risks outlined in this paper become increasingly critical. Stateless provides the essential infrastructure to facilitate a risk-minimized, verifiable, and trustless transition for this new data economy. By ensuring robust security and data integrity through our verification standards, we enable a seamless and secure experience for both developers and consumers.
+As decentralized networks become more integral to digital infrastructure, ensuring the integrity and security of offchain data interactions is critical. Stateless is at the forefront of this effort, offering a robust framework for verifying, analyzing, and managing the risks associated with decentralized data. By providing a seamless integration path through open-source tools and advanced analytics, we empower developers and networks to build more secure, reliable applications. Our focus on adaptability and comprehensive risk management prepares the ecosystem to address emerging challenges and confidently drive forward. Stateless is not just enhancing data security—it’s laying the groundwork for a more trustworthy and resilient decentralized future.
